@@ -16,4 +16,16 @@ main:
 li $v0, 4
 la $a0, Prompt1
 syscall
-# END OF PROGRAM
+
+li $v0, 5 #system call code for Read Integer
+syscall #reads the value of 1st integer into $v0
+move $t0, $v0 #move the 1st integer to $t0
+
+li $v0, 4
+la $a0, $t0
+syscall
+
+
+
+li $v0, 10 #terminate program run and
+syscall #return control to the system
